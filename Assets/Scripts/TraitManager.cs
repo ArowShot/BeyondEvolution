@@ -10,6 +10,7 @@ public class TraitManager : MonoBehaviour {
 	public TraitManager Instance { get; private set; }
 
 	public GameObject CategoryGui;
+	public GameObject TraitsGui;
 	public GameObject CategoryPrefab;
 	public Button TraitPrefab;
 	
@@ -85,7 +86,7 @@ public class TraitManager : MonoBehaviour {
 			
 			var traitButton = Instantiate(TraitPrefab);
 			traitButton.transform.SetParent(category.transform);
-			traitButton.GetComponentInChildren<Text>().text = trait.Name;
+			traitButton.GetComponentInChildren<Text>().text = trait.Name + " (" + trait.Cost + " points)";
 			traitButton.onClick.AddListener(delegate
 			{
 				PurchaseTrait(trait);
@@ -122,15 +123,25 @@ public class TraitManager : MonoBehaviour {
 	{
 		foreach(var trait in AllTraits)
 		{
-			if (UnlockedTraits.Contains(trait.GetType()))
+			if (!UnlockedTraits.Contains(trait.GetType()))
+				return;
+			
+			var statTrait = trait as IStatTrait;
+			if (statTrait != null)
 			{
-				trait.ApplyTrait(player);
+				statTrait.ApplyTrait(player);
 			}
 		}
 	}
 	
 	public void ShowTraitSelection()
 	{
-		
+		TraitsGui.SetActive(true);
+		CreateGui();
+	}
+	
+	public void HideTraitSelection()
+	{
+		TraitsGui.SetActive(false);
 	}
 }

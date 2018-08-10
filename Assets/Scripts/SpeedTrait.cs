@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedTrait : Trait
+public class SpeedTrait : Trait, IStatTrait
 {
     public override string Name
     {
@@ -17,7 +17,7 @@ public class SpeedTrait : Trait
         get { return Environment.Global; }
     }
 
-    public override void ApplyTrait(PlayerController player)
+    public void ApplyTrait(PlayerController player)
     {
         
     }

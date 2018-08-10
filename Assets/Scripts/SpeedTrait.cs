@@ -15,10 +15,10 @@ public class SpeedTrait : Trait, IStatTrait
     public override Environment Environment
     {
         get { return Environment.Global; }
-    }
+    }  
 
     public void ApplyTrait(PlayerController player)
     {
-        
+        player.speed += 2;
     }
 }

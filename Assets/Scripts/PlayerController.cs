@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
+    public float speed = 3;
+    public float stamina = 10;
+    public float health = 50;
+    public float defense = 0;
     public float xAxis;
     public float yAxis;
     private Rigidbody2D rb;
@@ -21,6 +24,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         playerMovement();
+        checkDead();
+
+        if(Input.GetKeyDown("p"))
+        {
+            FindObjectOfType<TraitManager>().Instance.ApplyTraits(this);
+        }
     }
 
     void playerMovement()
@@ -40,5 +49,18 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity *= speed / rb.velocity.magnitude;
         }
+    }
+
+    void checkDead()
+    {
+        if (this.health <= 0)
+        {
+            Debug.Log("I'm Dead. Rip.");
+        }
+    }
+
+    void calcDamage(int damage)
+    {
+        this.health -= (damage - defense);
     }
 }

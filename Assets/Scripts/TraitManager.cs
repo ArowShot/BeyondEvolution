@@ -19,7 +19,7 @@ public class TraitManager : MonoBehaviour {
 	{
 		new SpeedTrait()
 	};
-	public List<Trait> UnlockedTraits = new List<Trait>();
+	public List<Type> UnlockedTraits = new List<Type>();
 	
 	private void Awake()
 	{
@@ -34,37 +34,62 @@ public class TraitManager : MonoBehaviour {
 
 	private void Start()
 	{
+		CreateGui();
+	}
+
+	private void CreateGui()
+	{
+		// Reset Gui
+		foreach (Transform child in CategoryGui.transform) {
+			Destroy(child.gameObject);
+		}
+		
 		// Forest
 		var forestCategory = Instantiate(CategoryPrefab);
 		forestCategory.name = "Forest Category";
 		forestCategory.transform.SetParent(CategoryGui.transform);
+		AddTraitsToCategory(Environment.Forest, forestCategory);
 		
 		
 		// Tundra
 		var tundraCategory = Instantiate(CategoryPrefab);
 		tundraCategory.name = "Tundra Category";
 		tundraCategory.transform.SetParent(CategoryGui.transform);
+		AddTraitsToCategory(Environment.Tundra, tundraCategory);
 		
 		
 		// Desert
 		var desertCategory = Instantiate(CategoryPrefab);
 		desertCategory.name = "Desert Category";
 		desertCategory.transform.SetParent(CategoryGui.transform);
+		AddTraitsToCategory(Environment.Desert, desertCategory);
 		
 		
 		// Global
 		var globalCategory = Instantiate(CategoryPrefab);
 		globalCategory.name = "Global Category";
 		globalCategory.transform.SetParent(CategoryGui.transform);
-
-		var speedTrait = AllTraits[0];
-		var speedTraitButton = Instantiate(TraitPrefab);
-		speedTraitButton.transform.SetParent(globalCategory.transform);
-		speedTraitButton.GetComponentInChildren<Text>().text = speedTrait.Name;
-		speedTraitButton.onClick.AddListener(delegate
+		AddTraitsToCategory(Environment.Global, globalCategory);
+	}
+	
+	private void AddTraitsToCategory(Environment env, GameObject category)
+	{
+		foreach(var trait in AllTraits)
 		{
-			PurchaseTrait(speedTrait);
-		});
+			if (trait.Environment != env)
+				continue;
+			
+			var traitButton = Instantiate(TraitPrefab);
+			traitButton.transform.SetParent(category.transform);
+			traitButton.GetComponentInChildren<Text>().text = trait.Name;
+			traitButton.onClick.AddListener(delegate
+			{
+				PurchaseTrait(trait);
+			});
+			
+			if (UnlockedTraits.Contains(trait.GetType()))
+				traitButton.interactable = false;
+		}
 	}
 
 	private void Update()
@@ -74,12 +99,30 @@ public class TraitManager : MonoBehaviour {
 
 	private void PurchaseTrait(Trait trait)
 	{
-		var cost = trait.Cost;
-		Debug.Log(cost);
-
-		EvolutionPoints -= cost;
+		if (UnlockedTraits.Contains(trait.GetType()))
+			return;
 		
-		UnlockedTraits.Add(trait);
+		var cost = trait.Cost;
+		if (EvolutionPoints < cost)
+			return;
+		
+		Debug.Log("Purchased " + trait.Name);
+		
+		EvolutionPoints -= cost;
+		UnlockedTraits.Add(trait.GetType());
+
+		CreateGui();
+	}
+
+	public void ApplyTraits(PlayerController player)
+	{
+		foreach(var trait in AllTraits)
+		{
+			if (UnlockedTraits.Contains(trait.GetType()))
+			{
+				trait.ApplyTrait(player);
+			}
+		}
 	}
 	
 	public void ShowTraitSelection()

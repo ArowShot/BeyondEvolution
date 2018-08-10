@@ -48,6 +48,7 @@ public class TraitManager : MonoBehaviour {
 		var forestCategory = Instantiate(CategoryPrefab);
 		forestCategory.name = "Forest Category";
 		forestCategory.transform.SetParent(CategoryGui.transform);
+		forestCategory.GetComponentInChildren<Text>().text = "Forest Traits";
 		AddTraitsToCategory(Environment.Forest, forestCategory);
 		
 		
@@ -55,6 +56,7 @@ public class TraitManager : MonoBehaviour {
 		var tundraCategory = Instantiate(CategoryPrefab);
 		tundraCategory.name = "Tundra Category";
 		tundraCategory.transform.SetParent(CategoryGui.transform);
+		tundraCategory.GetComponentInChildren<Text>().text = "Tundra Traits";
 		AddTraitsToCategory(Environment.Tundra, tundraCategory);
 		
 		
@@ -62,6 +64,7 @@ public class TraitManager : MonoBehaviour {
 		var desertCategory = Instantiate(CategoryPrefab);
 		desertCategory.name = "Desert Category";
 		desertCategory.transform.SetParent(CategoryGui.transform);
+		desertCategory.GetComponentInChildren<Text>().text = "Desert Traits";
 		AddTraitsToCategory(Environment.Desert, desertCategory);
 		
 		
@@ -69,6 +72,7 @@ public class TraitManager : MonoBehaviour {
 		var globalCategory = Instantiate(CategoryPrefab);
 		globalCategory.name = "Global Category";
 		globalCategory.transform.SetParent(CategoryGui.transform);
+		globalCategory.GetComponentInChildren<Text>().text = "Global Traits";
 		AddTraitsToCategory(Environment.Global, globalCategory);
 	}
 	

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScalesTrait : Trait, IStatTrait
+public class ScalesTrait : Trait
 {
     public override string Name
     {

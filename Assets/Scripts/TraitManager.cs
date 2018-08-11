@@ -210,7 +210,7 @@ public class TraitManager : MonoBehaviour {
 		foreach(var trait in AllTraits)
 		{
 			if (!UnlockedTraits.Contains(trait.GetType()))
-				return;
+				continue;
 			
 			var passiveTrait = trait as IPassiveTrait;
 			if (passiveTrait != null)

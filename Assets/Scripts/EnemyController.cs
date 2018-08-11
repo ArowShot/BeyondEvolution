@@ -45,8 +45,10 @@ public class EnemyController : MonoBehaviour {
         var player = col2d.gameObject.GetComponent<PlayerController>();
         if (player != null)
         {
-            player.Health -= Attack;
+            player.Health -= (Attack - player.Defense);
         }
         _rb.AddForce((player.transform.position - transform.position).normalized * -Force);
     }
+
+
 }

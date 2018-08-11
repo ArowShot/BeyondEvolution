@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour
     public float Speed = 3;
     public float Stamina = 10;
     public float MaxStamina = 10;
-    public float Health = 50;
+    public float Health = 100;
     public float MaxHealth = 100;
-    public float Defense = 0;
+    public float Defense = 1;
     public float Attack = 0;
     public float XAxis;
     public float YAxis;
+    public GameObject Laser;
     private Rigidbody2D _rb;
 
     // Use this for initialization
@@ -52,6 +53,10 @@ public class PlayerController : MonoBehaviour
         {
             tm.ActivateAbility(this, 4);
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlayerAttack();
+        }
     }
 
     private void PlayerMovement()
@@ -81,8 +86,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void CalcDamage(int damage)
+    private void PlayerAttack()
     {
-        Health -= (damage - Defense);
+        Instantiate(Laser, transform.position, Quaternion.identity);
     }
 }

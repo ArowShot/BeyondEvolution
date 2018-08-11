@@ -21,7 +21,8 @@ public class TraitManager : MonoBehaviour {
     {
         new SpeedTrait(),
         new HealingTrait(),
-	    new ThornsTrait()
+	    new ThornsTrait(),
+        new DebugTrait()
 	};
 	public List<Type> UnlockedTraits = new List<Type>();
 	
@@ -149,7 +150,11 @@ public class TraitManager : MonoBehaviour {
 		UnlockedTraits.Add(trait.GetType());
 
 		CreateTraitSelectionGui();
-	}
+
+        var atrait = trait as IActiveTrait;
+        if (atrait != null)
+            ActiveTraits[0] = atrait;
+    }
 
 	public void ApplyTraits(PlayerController player)
 	{

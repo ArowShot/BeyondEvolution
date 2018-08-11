@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4377372217791662}
   - component: {fileID: 212568373484373388}
   - component: {fileID: 61315882090134148}
-  - component: {fileID: 50235251427489688}
   - component: {fileID: 68793487681668112}
   m_Layer: 0
   m_Name: Tundra Tree 2
@@ -43,26 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50235251427489688
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1816351432596912}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &61315882090134148
 BoxCollider2D:
   m_ObjectHideFlags: 1

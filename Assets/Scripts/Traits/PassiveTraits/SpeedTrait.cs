@@ -19,6 +19,11 @@ public class SpeedTrait : Trait, IStatTrait
 
     public void ApplyTrait(PlayerController player)
     {
-        player.Speed += 2;
+        ApplySpeed(player);
+    }
+
+    private void ApplySpeed(PlayerController player)
+    {
+        player.Speed += 2;   
     }
 }

@@ -22,9 +22,9 @@ public class HealthAndStaminaUpdater : MonoBehaviour
 	}
 	
 	private void Update () {
-		HealthText.text = "Health " + Player.Health + "/" + 50;
-		HealthBar.sizeDelta = new Vector2(Player.Health / 50f * _healthMax - _healthMax, 0);
-		StaminaText.text = "Stamina " + Player.Stamina + "/" + 10;
-		StaminaBar.sizeDelta = new Vector2(Player.Stamina / 50f * _staminaMax - _staminaMax, 0);
+		HealthText.text = "Health " + Player.Health + "/" + Player.MaxHealth;
+		HealthBar.sizeDelta = new Vector2(Player.Health / Player.MaxHealth * _healthMax - _healthMax, 0);
+		StaminaText.text = "Stamina " + Player.Stamina + "/" + Player.MaxStamina;
+		StaminaBar.sizeDelta = new Vector2(Player.Stamina / Player.MaxStamina * _staminaMax - _staminaMax, 0);
 	}
 }

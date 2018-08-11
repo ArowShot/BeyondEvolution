@@ -14,7 +14,7 @@ public class DashTrait : Trait, IActiveTrait
     }
     public override int Cost
     {
-        get { return 1; }
+        get { return 2; }
     }
     public override Environment Environment
     {

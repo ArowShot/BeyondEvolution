@@ -19,7 +19,7 @@ public class ClawTrait : Trait, IActiveTrait
     }
     public override Environment Environment
     {
-        get { return Environment.Desert; }
+        get { return Environment.Forest; }
     }
 
     public void DoActive(PlayerController player)

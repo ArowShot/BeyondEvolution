@@ -10,11 +10,11 @@ public class SpeedTrait : Trait, IStatTrait
     }
     public override int Cost
     {
-        get { return 1; }
+        get { return 2; }
     }
     public override Environment Environment
     {
-        get { return Environment.Global; }
+        get { return Environment.Tundra; }
     }  
 
     public void ApplyTrait(PlayerController player)

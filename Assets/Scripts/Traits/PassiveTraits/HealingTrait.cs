@@ -14,7 +14,7 @@ public class HealingTrait : Trait, IPassiveTrait
     }
     public override Environment Environment
     {
-        get { return Environment.Global; }
+        get { return Environment.Tundra; }
     }
 
     public void Update(PlayerController player)

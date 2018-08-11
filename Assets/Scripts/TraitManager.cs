@@ -22,17 +22,17 @@ public class TraitManager : MonoBehaviour {
     public List<Trait> AllTraits = new List<Trait>
     {
         new SpeedTrait(),
+        new FurTrait(),
+        new ScalesTrait(),
         new HealingTrait(),
         new ThornsTrait(),
-        new DebugTrait(),
-        new LaserAttackTrait(),
-        new BombTrait(),
-        new DashTrait(),
-        new ClawTrait(),
-        new GuardTrait(),
         new PoisonTrait(),
-        new FurTrait(),
-        new ScalesTrait()
+        //new DebugTrait(),
+        //new LaserAttackTrait(),
+        //new BombTrait(),
+        //new DashTrait(),
+        new ClawTrait(),
+        //new GuardTrait(),
 	};
 	public List<Type> UnlockedTraits = new List<Type>();
 	
@@ -66,7 +66,6 @@ public class TraitManager : MonoBehaviour {
 
 	private void Start()
 	{
-		Debug.Log("start");
 		EvolutionPointsText = GameObject.Find("Evolution Points").GetComponent<Text>();
 		TraitsGui = GameObject.Find("TraitsGUI");
 		CategoryGui = GameObject.Find("Categories");
@@ -87,7 +86,7 @@ public class TraitManager : MonoBehaviour {
 		var forestCategory = Instantiate(CategoryPrefab);
 		forestCategory.name = "Forest Category";
 		forestCategory.transform.SetParent(CategoryGui.transform);
-		forestCategory.GetComponentInChildren<Text>().text = "Forest Traits";
+		forestCategory.GetComponentInChildren<Text>().text = "Level 1 Trait";
 		AddTraitsToCategory(Environment.Forest, forestCategory);
 		
 		
@@ -95,7 +94,7 @@ public class TraitManager : MonoBehaviour {
 		var tundraCategory = Instantiate(CategoryPrefab);
 		tundraCategory.name = "Tundra Category";
 		tundraCategory.transform.SetParent(CategoryGui.transform);
-		tundraCategory.GetComponentInChildren<Text>().text = "Tundra Traits";
+		tundraCategory.GetComponentInChildren<Text>().text = "Level 2 Traits";
 		AddTraitsToCategory(Environment.Tundra, tundraCategory);
 		
 		
@@ -103,7 +102,7 @@ public class TraitManager : MonoBehaviour {
 		var desertCategory = Instantiate(CategoryPrefab);
 		desertCategory.name = "Desert Category";
 		desertCategory.transform.SetParent(CategoryGui.transform);
-		desertCategory.GetComponentInChildren<Text>().text = "Desert Traits";
+		desertCategory.GetComponentInChildren<Text>().text = "Level 3 Traits";
 		AddTraitsToCategory(Environment.Desert, desertCategory);
 		
 		

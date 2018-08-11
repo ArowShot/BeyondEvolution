@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
 
     public float Speed = 3;
     public float Stamina = 10;
+    public float MaxStamina = 10;
     public float Health = 50;
+    public float MaxHealth = 100;
     public float Defense = 0;
+    public float Attack = 0;
     public float XAxis;
     public float YAxis;
     private Rigidbody2D Rb;

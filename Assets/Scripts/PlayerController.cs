@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float Speed = 3;
+    public float Speed = 80;
     public float Stamina = 10;
     public float MaxStamina = 10;
     public float Health = 100;

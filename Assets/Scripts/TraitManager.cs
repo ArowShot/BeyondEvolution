@@ -259,7 +259,7 @@ public class TraitManager : MonoBehaviour {
 		foreach(var trait in AllTraits)
 		{
 			if (!UnlockedTraits.Contains(trait.GetType()))
-				return;
+				continue;
 			
 			var statTrait = trait as IStatTrait;
 			if (statTrait != null)

@@ -43,10 +43,10 @@ public class EnemyController : MonoBehaviour {
     {
         // If player collides with an enemy, take damage equal to this enemies Attack power
         var player = col2d.gameObject.GetComponent<PlayerController>();
-        if (player != null)
-        {
-            player.Health -= (Attack - player.Defense);
-        }
+        if (player == null)
+            return;
+        
+        player.Health -= (Attack - player.Defense);
         _rb.AddForce((player.transform.position - transform.position).normalized * -Force);
     }
 

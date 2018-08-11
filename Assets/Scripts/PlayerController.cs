@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +17,14 @@ public class PlayerController : MonoBehaviour
     public float YAxis;
     public GameObject Laser;
     private Rigidbody2D _rb;
+    public Animator Animator;
 
     // Use this for initialization
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called independent of framerate - physics code goes here
@@ -53,9 +56,10 @@ public class PlayerController : MonoBehaviour
         {
             tm.ActivateAbility(this, 4);
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("5"))
         {
             PlayerAttack();
+            Animator.SetTrigger("Laser");
         }
     }
 
@@ -76,6 +80,41 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity *= Speed / _rb.velocity.magnitude;
         }
+        
+        
+        if (Animator != null)
+        {
+            if(Animator.runtimeAnimatorController!=null)
+            {
+                /*if (Input.GetAxis("Vertical") > 0)
+                {
+                    _animator.SetFloat("Up", 1);
+                }
+                if (Input.GetAxis("Vertical") < 0)
+                {
+                    _animator.SetFloat("Up", -1);
+                }
+                if (Input.GetAxis("Vertical") == 0)
+                {
+                    _animator.SetFloat("Up", 0);
+                }
+                if (Input.GetAxis("Horizontal") > 0)
+                {
+                    _animator.SetFloat("Right", 1);
+                }
+                if (Input.GetAxis("Horizontal") < 0)
+                {
+                    _animator.SetFloat("Right", -1);
+                }
+                if (Input.GetAxis("Horizontal") == 0)
+                {
+                    _animator.SetFloat("Right", 0);
+                }*/
+                
+                Animator.SetBool("Moving", Math.Abs(velocityX.x) + Math.Abs(velocityY.y) > .2);
+            }
+        }
+
     }
 
     private void CheckDead()

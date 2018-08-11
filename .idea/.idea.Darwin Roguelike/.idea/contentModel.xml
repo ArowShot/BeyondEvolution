@@ -6,15 +6,31 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="DebugTrait.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
-          <e p="HealingTrait.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="HealthAndStaminaUpdater.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
-          <e p="SpeedTrait.cs" t="Include" />
-          <e p="ThornsTrait.cs" t="Include" />
-          <e p="Trait.cs" t="Include" />
+          <e p="ProjectileLogic.cs" t="Include" />
           <e p="TraitManager.cs" t="Include" />
+          <e p="Traits" t="Include">
+            <e p="ActiveTraits" t="Include">
+              <e p="BombTrait.cs" t="Include" />
+              <e p="ClawTrait.cs" t="Include" />
+              <e p="DashTrait.cs" t="Include" />
+              <e p="DebugTrait.cs" t="Include" />
+              <e p="GuardTrait.cs" t="Include" />
+              <e p="LaserAttackTrait.cs" t="Include" />
+            </e>
+            <e p="PassiveTraits" t="Include">
+              <e p="FurTrait.cs" t="Include" />
+              <e p="HealingTrait.cs" t="Include" />
+              <e p="PoisonTrait.cs" t="Include" />
+              <e p="ScalesTrait.cs" t="Include" />
+              <e p="SpeedTrait.cs" t="Include" />
+              <e p="ThornsTrait.cs" t="Include" />
+            </e>
+            <e p="Trait.cs" t="Include" />
+          </e>
           <e p="TraitsUpdater.cs" t="Include" />
         </e>
       </e>

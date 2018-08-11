@@ -54,8 +54,14 @@ public class EnemyController : MonoBehaviour {
         var player = col2d.gameObject.GetComponent<PlayerController>();
         if (player == null)
             return;
-        
-        player.Health -= (Attack - player.Defense);
+        if (_tm.UnlockedTraits.Exists(x => x.FullName == "ThornsTrait"))
+        {
+            player.Health -= (Attack - player.Defense);
+            Health -= (Attack - Defense) * 0.5f;
+        } else
+        {
+            player.Health -= (Attack - player.Defense);
+        }
         player.GetComponent<Rigidbody2D>().AddForce((player.transform.position - transform.position).normalized * Force);
     }
 

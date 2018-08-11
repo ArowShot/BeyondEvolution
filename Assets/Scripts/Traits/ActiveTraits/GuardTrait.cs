@@ -14,11 +14,11 @@ public class GuardTrait : Trait, IActiveTrait
     }
     public override int Cost
     {
-        get { return 2; }
+        get { return 3; }
     }
     public override Environment Environment
     {
-        get { return Environment.Forest; }
+        get { return Environment.Desert; }
     }
 
     public void DoActive(PlayerController player)

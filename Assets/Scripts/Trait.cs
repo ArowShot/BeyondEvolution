@@ -17,6 +17,7 @@ public interface IStatTrait
 
 public interface IActiveTrait
 {
+	int StaminaRequired { get; }
 	void DoActive(PlayerController player);
 }
 

@@ -29,10 +29,15 @@ public class TraitManager : MonoBehaviour {
 
 	public void ActivateAbility(PlayerController player, int ability)
 	{
-		if (ActiveTraits[ability - 1] != null)
-		{
-			ActiveTraits[ability - 1].DoActive(player);
-		}
+		var trait = ActiveTraits[ability - 1];
+		if (trait == null)
+			return;
+		
+		if (player.Stamina < trait.StaminaRequired)
+			return;
+
+		player.Stamina -= trait.StaminaRequired;
+		trait.DoActive(player);
 	}
 	
 	private void Awake()

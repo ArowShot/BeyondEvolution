@@ -5,28 +5,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 3;
-    public float stamina = 10;
-    public float health = 50;
-    public float defense = 0;
-    public float xAxis;
-    public float yAxis;
-    private Rigidbody2D rb;
+    public float Speed = 3;
+    public float Stamina = 10;
+    public float Health = 50;
+    public float Defense = 0;
+    public float XAxis;
+    public float YAxis;
+    private Rigidbody2D Rb;
 
     // Use this for initialization
 
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called independent of framerate - physics code goes here
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        playerMovement();
-        checkDead();
+        PlayerMovement();
+        CheckDead();
 
-        TraitManager tm = FindObjectOfType<TraitManager>().Instance;
+        var tm = FindObjectOfType<TraitManager>().Instance;
         
         if(Input.GetKeyDown("p"))
         {
@@ -51,35 +51,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void playerMovement()
+    private void PlayerMovement()
     {
-        xAxis = Input.GetAxisRaw("Horizontal") * speed;
-        yAxis = Input.GetAxisRaw("Vertical") * speed;
+        XAxis = Input.GetAxisRaw("Horizontal") * Speed;
+        YAxis = Input.GetAxisRaw("Vertical") * Speed;
 
-        Vector2 velocityX = rb.velocity;
-        velocityX.x = xAxis;
-        rb.velocity = velocityX;
+        var velocityX = Rb.velocity;
+        velocityX.x = XAxis;
+        Rb.velocity = velocityX;
 
-        Vector2 velocityY = rb.velocity;
-        velocityY.y = yAxis;
-        rb.velocity = velocityY;
+        var velocityY = Rb.velocity;
+        velocityY.y = YAxis;
+        Rb.velocity = velocityY;
 
-        if (rb.velocity.magnitude > speed)
+        if (Rb.velocity.magnitude > Speed)
         {
-            rb.velocity *= speed / rb.velocity.magnitude;
+            Rb.velocity *= Speed / Rb.velocity.magnitude;
         }
     }
 
-    void checkDead()
+    private void CheckDead()
     {
-        if (this.health <= 0)
+        if (Health <= 0)
         {
             Debug.Log("I'm Dead. Rip.");
         }
     }
 
-    void calcDamage(int damage)
+    private void CalcDamage(int damage)
     {
-        this.health -= (damage - defense);
+        Health -= (damage - Defense);
     }
 }

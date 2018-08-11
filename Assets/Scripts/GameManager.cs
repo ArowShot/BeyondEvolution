@@ -1,16 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
+	public static  GameManager Instance { get; private set; }
+	private static TraitManager _tm = TraitManager.Instance;
+	
+	private void Awake()
+	{
+		DontDestroyOnLoad(this);
+		if (Instance == null)
+		{
+			Instance = this;
+		} else
+		{
+			Destroy(gameObject);
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void StartGame()
+	{
+		SceneManager.LoadScene("Game");
+	}
+	
+	public void OnDead()
+	{
+		SceneManager.LoadScene("TraitsScene");
 	}
 }

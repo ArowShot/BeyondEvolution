@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Security;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TraitManager : MonoBehaviour {
-	public TraitManager Instance { get; private set; }
+	public static TraitManager Instance { get; private set; }
 
 	public Text EvolutionPointsText;
 	public GameObject CategoryGui;
@@ -52,20 +53,26 @@ public class TraitManager : MonoBehaviour {
 	
 	private void Awake()
 	{
+		DontDestroyOnLoad(this);
 		if (Instance == null)
 		{
 			Instance = this;
-		} else if (Instance != this)
+		} else
 		{
-			Destroy(this);
+			var traitsGui = GameObject.Find("TraitsGUI");
+			Destroy(gameObject);
 		}
 	}
 
 	private void Start()
 	{
+		Debug.Log("start");
+		EvolutionPointsText = GameObject.Find("Evolution Points").GetComponent<Text>();
+		TraitsGui = GameObject.Find("TraitsGUI");
+		CategoryGui = GameObject.Find("Categories");
 		CreateTraitSelectionGui();
 	}
-
+	
 	private void CreateTraitSelectionGui()
 	{
 		EvolutionPointsText.text = "Evolution Points: " + EvolutionPoints;
@@ -209,6 +216,13 @@ public class TraitManager : MonoBehaviour {
 
 	private void Update()
 	{
+		if (CategoryGui == null && GameObject.Find("Categories") != null)
+		{
+			EvolutionPointsText = GameObject.Find("Evolution Points").GetComponent<Text>();
+			TraitsGui = GameObject.Find("TraitsGUI");
+			CategoryGui = GameObject.Find("Categories");
+			CreateTraitSelectionGui();
+		}
 		var player = FindObjectOfType<PlayerController>();
 		foreach(var trait in AllTraits)
 		{

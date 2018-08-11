@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour {
     public Transform Target;
     public float Attack = 2;
     public float Speed = 2;
-    public float Force = 150;
+    public float Force = 250;
     public float Health = 50;
     public float Defense = 0;
     public float Thrust = 10.0f;
@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour {
 	void Start ()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _tm = FindObjectOfType<TraitManager>().Instance;
+        _tm = TraitManager.Instance;
         InvokeRepeating("CheckPoison", 0.0f, 1.5f);
 	}
 	
@@ -28,6 +28,10 @@ public class EnemyController : MonoBehaviour {
 	void FixedUpdate ()
     {
         EnemyPathfinding();
+        if (Health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     void EnemyPathfinding()
@@ -51,7 +55,7 @@ public class EnemyController : MonoBehaviour {
             return;
         
         player.Health -= (Attack - player.Defense);
-        _rb.AddForce((player.transform.position - transform.position).normalized * -Force);
+        player.GetComponent<Rigidbody2D>().AddForce((player.transform.position - transform.position).normalized * Force);
     }
 
     private void OnTriggerEnter2D(Collider2D col2d)
@@ -60,12 +64,10 @@ public class EnemyController : MonoBehaviour {
         {
             isPoisoned = true;
             Health -= 5;
-            Destroy(col2d.gameObject);
         }
         else
         {
             Health -= 5;
-            Destroy(col2d.gameObject);
         }
     }
 
@@ -73,7 +75,12 @@ public class EnemyController : MonoBehaviour {
     {
         if (isPoisoned == true)
         {
+            GetComponent<ParticleSystem>().enableEmission = true;
             Health -= 2;
+        }
+        else
+        {
+            GetComponent<ParticleSystem>().enableEmission = false;
         }
     }
 }

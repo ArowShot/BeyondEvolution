@@ -1,23 +1,17 @@
 fileFormatVersion: 2
-guid: a5021d5b46617bd46a7ba5f8886c3b27
+guid: 75b8a3028fcdc7545a14ae076e80a51e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ParticleSpriteSheet_0
-    21300002: ParticleSpriteSheet_1
-    21300004: ParticleSpriteSheet_2
-    21300006: ParticleSpriteSheet_3
-    21300008: ParticleSpriteSheet_4
-    21300010: ParticleSpriteSheet_5
-    21300012: ParticleSpriteSheet_6
-    21300014: ParticleSpriteSheet_7
-    21300016: ParticleSpriteSheet_8
-    21300018: ParticleSpriteSheet_9
-    21300020: ParticleSpriteSheet_10
-    21300022: ParticleSpriteSheet_11
-    21300024: ParticleSpriteSheet_12
-    21300026: ParticleSpriteSheet_13
-    21300028: ParticleSpriteSheet_14
-    21300030: ParticleSpriteSheet_15
+    21300000: tundra_sprites_0
+    21300002: tundra_sprites_1
+    21300004: tundra_sprites_2
+    21300006: tundra_sprites_3
+    21300008: tundra_sprites_4
+    21300010: tundra_sprites_5
+    21300012: tundra_sprites_6
+    21300014: tundra_sprites_7
+    21300016: tundra_sprites_8
+    21300018: tundra_sprites_9
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -59,7 +53,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1800
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,321 +147,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ParticleSpriteSheet_0
+      name: tundra_sprites_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 1050
-        width: 351
-        height: 364
+        x: 23
+        y: 1946
+        width: 950
+        height: 2010
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9fb7e4c2bddab840a8629a28f1e4f79
+      spriteID: d170a12f60cd0544c8c041ca74ec5d27
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_1
+      name: tundra_sprites_1
       rect:
         serializedVersion: 2
-        x: 506
-        y: 1009
-        width: 269
-        height: 367
+        x: 1341
+        y: 1946
+        width: 951
+        height: 2010
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a65df8073b424e40a869c02b5d3e1b2
+      spriteID: cf8c7dc2e927c5c4798f6d2c7f0ba207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_2
+      name: tundra_sprites_2
       rect:
         serializedVersion: 2
-        x: 805
-        y: 1077
-        width: 10
-        height: 13
+        x: 2663
+        y: 1946
+        width: 950
+        height: 2010
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 633b0e07497d2da46afb741126cbcb5d
+      spriteID: c29159208ca647a43bb9d94d8cbf1dc7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_3
+      name: tundra_sprites_3
       rect:
         serializedVersion: 2
-        x: 816
-        y: 1086
-        width: 8
-        height: 11
+        x: 101
+        y: 1036
+        width: 975
+        height: 652
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3a9f7f3c87c3a44f9c3261bd488d5f0
+      spriteID: 70c3ff3989a776c4aa90674dd2fd8622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_4
+      name: tundra_sprites_4
       rect:
         serializedVersion: 2
-        x: 818
-        y: 1001
-        width: 234
-        height: 375
+        x: 1371
+        y: 1036
+        width: 975
+        height: 652
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecd6acb90d465fb45bda72a92173c2e6
+      spriteID: 82246229bda7b37409ea2d530c73cbe7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_5
+      name: tundra_sprites_5
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 1009
-        width: 270
-        height: 367
+        x: 2692
+        y: 1036
+        width: 975
+        height: 652
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6331917b552a2c4aae3114895b74a56
+      spriteID: 88b130cfd789483448539cb894561729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_6
+      name: tundra_sprites_6
       rect:
         serializedVersion: 2
-        x: 1427
-        y: 1077
-        width: 10
-        height: 13
+        x: 4227
+        y: 1036
+        width: 826
+        height: 537
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a421e1f0065b8488adb09124d3230e
+      spriteID: a1d8015afc063b6439234a5cc5f68c42
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_7
+      name: tundra_sprites_7
       rect:
         serializedVersion: 2
-        x: 1438
-        y: 1086
-        width: 8
-        height: 11
+        x: 275
+        y: 47
+        width: 588
+        height: 685
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c8cd63d8fefbdc41aae4e6635cb0291
+      spriteID: 743077ebffd4fc94b8fe6700b4d89f03
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_8
+      name: tundra_sprites_8
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1001
-        width: 234
-        height: 375
+        x: 1481
+        y: 109
+        width: 755
+        height: 628
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ec154b9b3ddccb47abb2d4c211f70b4
+      spriteID: 6d7de64ce0c8c76458787874c8f60705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_9
+      name: tundra_sprites_9
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 1070
-        width: 5
-        height: 7
+        x: 2770
+        y: 52
+        width: 693
+        height: 728
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bacfc5afe12755c46ac4dd889cb1e5fb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 1691
-        y: 1070
-        width: 5
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b4f6bf491a3e6f42b81f4bbffe6f3a5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 40
-        width: 223
-        height: 706
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d58e4d02029395c438ab2fc72ec6ecca
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 526
-        y: 40
-        width: 301
-        height: 706
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5aefa40a4f8ccb34ea58683e46943b71
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 907
-        y: 40
-        width: 317
-        height: 706
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c39e04a201225f4cad438fb67f527c0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 1312
-        y: 40
-        width: 263
-        height: 706
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdd6f597d006a9a47bc1a672aed938bb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_15
-      rect:
-        serializedVersion: 2
-        x: 1740
-        y: 40
-        width: 228
-        height: 706
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2ea6183d35166a4c9733a06d1b1ef9f
+      spriteID: b0cc030f2eab97a40941f7757d3084e9
       vertices: []
       indices: 
       edges: []
@@ -475,7 +349,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e2da1d26fe012b44eb92b12e7afc4da9
+    spriteID: 82ca703857766214f8088e5c8f1ae891
     vertices: []
     indices: 
     edges: []

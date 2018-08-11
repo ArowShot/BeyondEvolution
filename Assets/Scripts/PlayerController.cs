@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Laser;
     private Rigidbody2D _rb;
     public Animator Animator;
+    private GameManager _gm;
 
     // Use this for initialization
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        _gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called independent of framerate - physics code goes here
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
         CheckDead();
 
-        var tm = FindObjectOfType<TraitManager>().Instance;
+        var tm = TraitManager.Instance;
         
         if(Input.GetKeyDown("p"))
         {
@@ -62,8 +64,10 @@ public class PlayerController : MonoBehaviour
     {
         XAxis = Input.GetAxisRaw("Horizontal") * Speed;
         YAxis = Input.GetAxisRaw("Vertical") * Speed;
-
-        var velocityX = _rb.velocity;
+    
+        _rb.AddForce(new Vector2(XAxis, YAxis));
+        
+        /*var velocityX = _rb.velocity;
         velocityX.x = XAxis;
         _rb.velocity = velocityX;
 
@@ -74,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (_rb.velocity.magnitude > Speed)
         {
             _rb.velocity *= Speed / _rb.velocity.magnitude;
-        }
+        }*/
         
         
         if (Animator != null)
@@ -108,7 +112,7 @@ public class PlayerController : MonoBehaviour
                     Animator.SetFloat("Right", 0);
                 }*/
                 
-                Animator.SetBool("Walking", Math.Abs(velocityX.x) + Math.Abs(velocityY.y) > .2);
+                Animator.SetBool("Walking", Math.Abs(XAxis) + Math.Abs(YAxis) > .2);
             }
         }
 
@@ -118,7 +122,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Debug.Log("I'm Dead. Rip.");
+            _gm.OnDead();
         }
     }
 

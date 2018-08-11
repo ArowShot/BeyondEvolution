@@ -5,17 +5,12 @@ using UnityEngine.UI;
 
 public class TraitsUpdater : MonoBehaviour
 {
-	private TraitManager _tm;
+	private TraitManager _tm = TraitManager.Instance;
 
 	public Text Trait1;
 	public Text Trait2;
 	public Text Trait3;
 	public Text Trait4;
-	
-	private void Start ()
-	{
-		_tm = FindObjectOfType<TraitManager>().Instance;
-	}
 	
 	private void Update ()
 	{

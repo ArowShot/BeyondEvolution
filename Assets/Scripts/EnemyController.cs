@@ -15,11 +15,13 @@ public class EnemyController : MonoBehaviour {
     public float Health = 50;
     public float Defense = 0;
     public float Thrust = 10.0f;
+    public bool isPoisoned = false;
 	// Use this for initialization
 	void Start ()
     {
         _rb = GetComponent<Rigidbody2D>();
         _tm = FindObjectOfType<TraitManager>().Instance;
+        InvokeRepeating("CheckPoison", 0.0f, 1.5f);
 	}
 	
 	// Update is called independent of framerate - puts physics logic in here
@@ -54,6 +56,24 @@ public class EnemyController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col2d)
     {
-        Debug.Log(_tm.UnlockedTraits.Exists(x => x.FullName == "PoisonTrait"));
+        if(_tm.UnlockedTraits.Exists(x => x.FullName == "PoisonTrait"))
+        {
+            isPoisoned = true;
+            Health -= 5;
+            Destroy(col2d.gameObject);
+        }
+        else
+        {
+            Health -= 5;
+            Destroy(col2d.gameObject);
+        }
+    }
+
+    private void CheckPoison()
+    {
+        if (isPoisoned == true)
+        {
+            Health -= 2;
+        }
     }
 }

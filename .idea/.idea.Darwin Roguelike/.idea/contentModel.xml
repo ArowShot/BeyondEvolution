@@ -12,6 +12,7 @@
           <e p="HealthAndStaminaUpdater.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ProjectileLogic.cs" t="Include" />
+          <e p="StartButtonScript.cs" t="Include" />
           <e p="TraitManager.cs" t="Include" />
           <e p="Traits" t="Include">
             <e p="ActiveTraits" t="Include">

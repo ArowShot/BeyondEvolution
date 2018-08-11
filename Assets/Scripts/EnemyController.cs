@@ -67,7 +67,14 @@ public class EnemyController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col2d)
     {
-        if(_tm.UnlockedTraits.Exists(x => x.FullName == "PoisonTrait"))
+        // If player collides with an enemy, take damage equal to this enemies Attack power
+        var player = col2d.gameObject.GetComponent<PlayerController>();
+        if (player == null)
+            return;
+        
+        player.Health -= (Attack - player.Defense);
+        player.GetComponent<Rigidbody2D>().AddForce((player.transform.position - transform.position).normalized * Force);
+        /*if(_tm.UnlockedTraits.Exists(x => x.FullName == "PoisonTrait"))
         {
             isPoisoned = true;
             Health -= 5;
@@ -75,7 +82,7 @@ public class EnemyController : MonoBehaviour {
         else
         {
             Health -= 5;
-        }
+        }*/
     }
 
     private void CheckPoison()

@@ -14,11 +14,12 @@ public class TraitManager : MonoBehaviour {
 	public GameObject CategoryPrefab;
 	public Button TraitPrefab;
 	
-	public int EvolutionPoints = 2;
+	public int EvolutionPoints = 5;
 
-	public List<Trait> AllTraits = new List<Trait>
-	{
-		new SpeedTrait()
+    public List<Trait> AllTraits = new List<Trait>
+    {
+        new SpeedTrait(),
+        new HealingTrait()
 	};
 	public List<Type> UnlockedTraits = new List<Type>();
 	

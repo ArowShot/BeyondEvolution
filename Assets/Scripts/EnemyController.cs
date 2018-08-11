@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
     private Rigidbody2D _rb;
+    private TraitManager _tm;
     public float MinDistance = 6f;
     public float Range;
     public Transform Target;
@@ -18,6 +19,7 @@ public class EnemyController : MonoBehaviour {
 	void Start ()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _tm = FindObjectOfType<TraitManager>().Instance;
 	}
 	
 	// Update is called independent of framerate - puts physics logic in here
@@ -50,5 +52,8 @@ public class EnemyController : MonoBehaviour {
         _rb.AddForce((player.transform.position - transform.position).normalized * -Force);
     }
 
-
+    private void OnTriggerEnter2D(Collider2D col2d)
+    {
+        Debug.Log(_tm.UnlockedTraits.Exists(x => x.FullName == "PoisonTrait"));
+    }
 }

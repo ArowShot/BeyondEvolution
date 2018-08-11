@@ -22,13 +22,16 @@ public class TraitManager : MonoBehaviour {
     {
         new SpeedTrait(),
         new HealingTrait(),
-	    new ThornsTrait(),
+        new ThornsTrait(),
         new DebugTrait(),
         new LaserAttackTrait(),
         new BombTrait(),
         new DashTrait(),
         new ClawTrait(),
-        new GuardTrait()
+        new GuardTrait(),
+        new PoisonTrait(),
+        new FurTrait(),
+        new ScalesTrait()
 	};
 	public List<Type> UnlockedTraits = new List<Type>();
 	

@@ -27,6 +27,6 @@ public class LaserAttackTrait : Trait, IActiveTrait {
 
     private void ShootLasers()
     {
-        Debug.Log("Lasers Work");
+        Debug.Log("Lasers go here");
     }
 }

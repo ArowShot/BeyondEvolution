@@ -108,23 +108,83 @@ public class TraitManager : MonoBehaviour {
 				continue;
 
 			GameObject traitButton;
-			if (trait is IActiveTrait)
+			var atrait = trait as IActiveTrait;
+			if (atrait != null)
 			{
 				traitButton = Instantiate(ActiveTraitPrefab);
-				var button1 = traitButton.transform.Find("Button 1").GetComponent<Button>();
-				button1.interactable = false;
+				var button1 = traitButton.transform.Find("AbilitiesButtons/Button 1").GetComponent<Button>();
+				if (!UnlockedTraits.Contains(trait.GetType())) {
+					button1.interactable = false;
+				} else
+				{
+					if (ActiveTraits[0] != null && ActiveTraits[0].GetType() == trait.GetType())
+					{
+						button1.interactable = false;
+					}
+
+					button1.onClick.AddListener(delegate
+					{
+						ActiveTraits[0] = atrait;
+						CreateTraitSelectionGui();
+					});
+				}
 				
-				var button2 = traitButton.transform.Find("Button 2").GetComponent<Button>();
-				
-				var button3 = traitButton.transform.Find("Button 3").GetComponent<Button>();
-				
-				var button4 = traitButton.transform.Find("Button 4").GetComponent<Button>();
-				
+				var button2 = traitButton.transform.Find("AbilitiesButtons/Button 2").GetComponent<Button>();
+				if (!UnlockedTraits.Contains(trait.GetType())) {
+					button2.interactable = false;
+				} else
+				{
+					if (ActiveTraits[1] != null && ActiveTraits[1].GetType() == trait.GetType())
+					{
+						button2.interactable = false;
+					}
+
+					button2.onClick.AddListener(delegate
+					{
+						ActiveTraits[1] = atrait;
+						CreateTraitSelectionGui();
+					});
+				}
+
+				var button3 = traitButton.transform.Find("AbilitiesButtons/Button 3").GetComponent<Button>();
+				if (!UnlockedTraits.Contains(trait.GetType())) {
+					button3.interactable = false;
+				} else
+				{
+					if (ActiveTraits[2] != null && ActiveTraits[2].GetType() == trait.GetType())
+					{
+						button3.interactable = false;
+					}
+
+					button3.onClick.AddListener(delegate
+					{
+						ActiveTraits[2] = atrait;
+						CreateTraitSelectionGui();
+					});
+				}
+
+				var button4 = traitButton.transform.Find("AbilitiesButtons/Button 4").GetComponent<Button>();
+				if (!UnlockedTraits.Contains(trait.GetType())) {
+					button4.interactable = false;
+				} else
+				{
+					if (ActiveTraits[3] != null && ActiveTraits[3].GetType() == trait.GetType())
+					{
+						button4.interactable = false;
+					}
+
+					button4.onClick.AddListener(delegate
+					{
+						ActiveTraits[3] = atrait;
+						CreateTraitSelectionGui();
+					});
+				}
 			}
 			else
 			{
 				traitButton = Instantiate(TraitPrefab);
 			}
+			
 			traitButton.transform.SetParent(category.transform);
 			traitButton.GetComponentInChildren<Text>().text = trait.Name + " (" + trait.Cost + " points)";
 			traitButton.GetComponent<Button>().onClick.AddListener(delegate
@@ -170,10 +230,6 @@ public class TraitManager : MonoBehaviour {
 		UnlockedTraits.Add(trait.GetType());
 
 		CreateTraitSelectionGui();
-
-        var atrait = trait as IActiveTrait;
-        if (atrait != null)
-            ActiveTraits[0] = atrait;
     }
 
 	public void ApplyTraits(PlayerController player)

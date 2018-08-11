@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 114884970610085774}
   - component: {fileID: 114672775669201656}
   m_Layer: 5
-  m_Name: Button 1
+  m_Name: Active Trait Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

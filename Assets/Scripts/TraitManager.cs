@@ -13,7 +13,8 @@ public class TraitManager : MonoBehaviour {
 	public GameObject CategoryGui;
 	public GameObject TraitsGui;
 	public GameObject CategoryPrefab;
-	public Button TraitPrefab;
+	public GameObject TraitPrefab;
+	public GameObject ActiveTraitPrefab;
 	
 	public int EvolutionPoints = 5;
 
@@ -104,17 +105,36 @@ public class TraitManager : MonoBehaviour {
 		{
 			if (trait.Environment != env)
 				continue;
-			
-			var traitButton = Instantiate(TraitPrefab);
+
+			GameObject traitButton;
+			if (trait is IActiveTrait)
+			{
+				traitButton = Instantiate(ActiveTraitPrefab);
+				var button1 = traitButton.transform.Find("Button 1").GetComponent<Button>();
+				button1.interactable = false;
+				
+				var button2 = traitButton.transform.Find("Button 2").GetComponent<Button>();
+				
+				var button3 = traitButton.transform.Find("Button 3").GetComponent<Button>();
+				
+				var button4 = traitButton.transform.Find("Button 4").GetComponent<Button>();
+				
+			}
+			else
+			{
+				traitButton = Instantiate(TraitPrefab);
+			}
 			traitButton.transform.SetParent(category.transform);
 			traitButton.GetComponentInChildren<Text>().text = trait.Name + " (" + trait.Cost + " points)";
-			traitButton.onClick.AddListener(delegate
+			traitButton.GetComponent<Button>().onClick.AddListener(delegate
 			{
 				PurchaseTrait(trait);
 			});
 			
+			
+			
 			if (UnlockedTraits.Contains(trait.GetType()))
-				traitButton.interactable = false;
+				traitButton.GetComponent<Button>().interactable = false;
 		}
 	}
 

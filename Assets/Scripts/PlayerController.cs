@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour
     public float Defense = 0;
     public float XAxis;
     public float YAxis;
-    private Rigidbody2D Rb;
+    private Rigidbody2D _rb;
 
     // Use this for initialization
 
     private void Start()
     {
-        Rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called independent of framerate - physics code goes here
@@ -56,17 +56,17 @@ public class PlayerController : MonoBehaviour
         XAxis = Input.GetAxisRaw("Horizontal") * Speed;
         YAxis = Input.GetAxisRaw("Vertical") * Speed;
 
-        var velocityX = Rb.velocity;
+        var velocityX = _rb.velocity;
         velocityX.x = XAxis;
-        Rb.velocity = velocityX;
+        _rb.velocity = velocityX;
 
-        var velocityY = Rb.velocity;
+        var velocityY = _rb.velocity;
         velocityY.y = YAxis;
-        Rb.velocity = velocityY;
+        _rb.velocity = velocityY;
 
-        if (Rb.velocity.magnitude > Speed)
+        if (_rb.velocity.magnitude > Speed)
         {
-            Rb.velocity *= Speed / Rb.velocity.magnitude;
+            _rb.velocity *= Speed / _rb.velocity.magnitude;
         }
     }
 

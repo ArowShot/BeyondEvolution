@@ -17,7 +17,7 @@ public class TraitManager : MonoBehaviour {
 	public GameObject TraitPrefab;
 	public GameObject ActiveTraitPrefab;
 	
-	public int EvolutionPoints = 5;
+	public int EvolutionPoints = 1;
 
     public List<Trait> AllTraits = new List<Trait>
     {

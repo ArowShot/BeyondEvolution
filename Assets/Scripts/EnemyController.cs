@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour {
     public float MinDistance = 6f;
     public float Range;
     public Transform Target;
-    public float Attack = 2;
+    public float Attack = 8;
     public float Speed = 2;
     public float Force = 250;
     public float Health = 50;
@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour {
         if (Health <= 0)
         {
             Destroy(this.gameObject);
+            _tm.EvolutionPoints++;
         }
 	}
 

@@ -22,7 +22,8 @@ public class EnemyController : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
         _tm = TraitManager.Instance;
         InvokeRepeating("CheckPoison", 0.0f, 1.5f);
-	}
+        Target = FindObjectOfType<PlayerController>().transform;
+    }
 	
 	// Update is called independent of framerate - puts physics logic in here
 	void FixedUpdate ()

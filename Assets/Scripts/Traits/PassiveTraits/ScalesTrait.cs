@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScalesTrait : Trait
+public class ScalesTrait : Trait, IStatTrait
 {
     public override string Name
     {
@@ -15,5 +15,10 @@ public class ScalesTrait : Trait
     public override Environment Environment
     {
         get { return Environment.Global; }
+    }
+
+    public void ApplyTrait(PlayerController player)
+    {
+        player.MaxStamina += 5;
     }
 }

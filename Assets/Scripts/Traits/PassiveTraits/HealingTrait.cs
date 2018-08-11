@@ -24,6 +24,10 @@ public class HealingTrait : Trait, IPassiveTrait
 
     private void HealPlayer(PlayerController player)
     {
+        if (player == null)
+        {
+            return;
+        }
         if (player.Health < player.MaxHealth)
         {
             player.Health += (1 * Time.deltaTime);

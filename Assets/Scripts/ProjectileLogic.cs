@@ -8,8 +8,12 @@ public class ProjectileLogic : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var mouseDir = mousePos - gameObject.transform.position;
+        mouseDir.z = 0.0f;
+        mouseDir = mouseDir.normalized;
         _rb = GetComponent<Rigidbody2D>();
-        _rb.AddForce(transform.up * Speed);
+        _rb.AddForce(mouseDir * Speed);
     }
 
     private void OnBecameInvisible()

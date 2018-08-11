@@ -40,26 +40,21 @@ public class PlayerController : MonoBehaviour
             tm.ApplyTraits(this);
         }
 
-        if (Input.GetKeyDown("1"))
+        if (Input.GetMouseButtonDown(0))
         {
             tm.ActivateAbility(this, 1);
         }
-        if (Input.GetKeyDown("2"))
+        if (Input.GetMouseButtonDown(1))
         {
             tm.ActivateAbility(this, 2);
         }
-        if (Input.GetKeyDown("3"))
+        if (Input.GetKeyDown("q"))
         {
             tm.ActivateAbility(this, 3);
         }
-        if (Input.GetKeyDown("4"))
+        if (Input.GetKeyDown("e"))
         {
             tm.ActivateAbility(this, 4);
-        }
-        if (Input.GetKeyDown("5"))
-        {
-            PlayerAttack();
-            Animator.SetTrigger("Laser");
         }
     }
 
@@ -86,32 +81,34 @@ public class PlayerController : MonoBehaviour
         {
             if(Animator.runtimeAnimatorController!=null)
             {
+                Animator.SetFloat("Up", Input.GetAxisRaw("Vertical"));
+                Animator.SetFloat("Right", Input.GetAxisRaw("Horizontal"));
                 /*if (Input.GetAxis("Vertical") > 0)
                 {
-                    _animator.SetFloat("Up", 1);
+                    Animator.SetFloat("Up", 1);
                 }
                 if (Input.GetAxis("Vertical") < 0)
                 {
-                    _animator.SetFloat("Up", -1);
+                    Animator.SetFloat("Up", -1);
                 }
                 if (Input.GetAxis("Vertical") == 0)
                 {
-                    _animator.SetFloat("Up", 0);
+                    Animator.SetFloat("Up", 0);
                 }
                 if (Input.GetAxis("Horizontal") > 0)
                 {
-                    _animator.SetFloat("Right", 1);
+                    Animator.SetFloat("Right", 1);
                 }
                 if (Input.GetAxis("Horizontal") < 0)
                 {
-                    _animator.SetFloat("Right", -1);
+                    Animator.SetFloat("Right", -1);
                 }
                 if (Input.GetAxis("Horizontal") == 0)
                 {
-                    _animator.SetFloat("Right", 0);
+                    Animator.SetFloat("Right", 0);
                 }*/
                 
-                Animator.SetBool("Moving", Math.Abs(velocityX.x) + Math.Abs(velocityY.y) > .2);
+                Animator.SetBool("Walking", Math.Abs(velocityX.x) + Math.Abs(velocityY.y) > .2);
             }
         }
 

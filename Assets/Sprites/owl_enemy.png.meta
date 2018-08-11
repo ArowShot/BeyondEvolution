@@ -1,23 +1,19 @@
 fileFormatVersion: 2
-guid: a5021d5b46617bd46a7ba5f8886c3b27
+guid: 5601df836252a6f48bc3c1a75233b6e6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ParticleSpriteSheet_0
-    21300002: ParticleSpriteSheet_1
-    21300004: ParticleSpriteSheet_2
-    21300006: ParticleSpriteSheet_3
-    21300008: ParticleSpriteSheet_4
-    21300010: ParticleSpriteSheet_5
-    21300012: ParticleSpriteSheet_6
-    21300014: ParticleSpriteSheet_7
-    21300016: ParticleSpriteSheet_8
-    21300018: ParticleSpriteSheet_9
-    21300020: ParticleSpriteSheet_10
-    21300022: ParticleSpriteSheet_11
-    21300024: ParticleSpriteSheet_12
-    21300026: ParticleSpriteSheet_13
-    21300028: ParticleSpriteSheet_14
-    21300030: ParticleSpriteSheet_15
+    21300000: owl_enemy_0
+    21300002: owl_enemy_1
+    21300004: owl_enemy_2
+    21300006: owl_enemy_3
+    21300008: owl_enemy_4
+    21300010: owl_enemy_5
+    21300012: owl_enemy_6
+    21300014: owl_enemy_7
+    21300016: owl_enemy_8
+    21300018: owl_enemy_9
+    21300020: owl_enemy_10
+    21300022: owl_enemy_11
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -153,321 +149,241 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ParticleSpriteSheet_0
+      name: owl_enemy_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 1050
-        width: 351
-        height: 364
+        x: 21
+        y: 911
+        width: 159
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9fb7e4c2bddab840a8629a28f1e4f79
+      spriteID: 314802a6999c0cc45b80f9bba6d272d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_1
+      name: owl_enemy_1
       rect:
         serializedVersion: 2
-        x: 506
-        y: 1009
-        width: 269
-        height: 367
+        x: 201
+        y: 908
+        width: 195
+        height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a65df8073b424e40a869c02b5d3e1b2
+      spriteID: c0fc1df82cda7884da510b132b9ae255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_2
+      name: owl_enemy_2
       rect:
         serializedVersion: 2
-        x: 805
-        y: 1077
-        width: 10
-        height: 13
+        x: 20
+        y: 795
+        width: 149
+        height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 633b0e07497d2da46afb741126cbcb5d
+      spriteID: 7fbf6345a8c7e804f97f897699f3557e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_3
+      name: owl_enemy_3
       rect:
         serializedVersion: 2
-        x: 816
-        y: 1086
-        width: 8
-        height: 11
+        x: 190
+        y: 777
+        width: 76
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3a9f7f3c87c3a44f9c3261bd488d5f0
+      spriteID: 7107319123443964d808302cf224e95c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_4
+      name: owl_enemy_4
       rect:
         serializedVersion: 2
-        x: 818
-        y: 1001
-        width: 234
-        height: 375
+        x: 287
+        y: 786
+        width: 76
+        height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecd6acb90d465fb45bda72a92173c2e6
+      spriteID: eb10b2b19799547438f92b1fbea68be7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_5
+      name: owl_enemy_5
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 1009
-        width: 270
-        height: 367
+        x: 384
+        y: 772
+        width: 76
+        height: 117
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6331917b552a2c4aae3114895b74a56
+      spriteID: d34c75bd8b3fb8148ab2b5bd7f80bd10
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_6
+      name: owl_enemy_6
       rect:
         serializedVersion: 2
-        x: 1427
-        y: 1077
-        width: 10
-        height: 13
+        x: 20
+        y: 637
+        width: 76
+        height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40a421e1f0065b8488adb09124d3230e
+      spriteID: 9d44667e5fea1d6408e1c5c4349bd103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_7
+      name: owl_enemy_7
       rect:
         serializedVersion: 2
-        x: 1438
-        y: 1086
-        width: 8
-        height: 11
+        x: 117
+        y: 648
+        width: 76
+        height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c8cd63d8fefbdc41aae4e6635cb0291
+      spriteID: fa199158947073241a55597c3e4f6b8c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_8
+      name: owl_enemy_8
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 1001
-        width: 234
-        height: 375
+        x: 214
+        y: 634
+        width: 76
+        height: 117
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ec154b9b3ddccb47abb2d4c211f70b4
+      spriteID: 5983516a0c8e5a849994f46480859244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_9
+      name: owl_enemy_9
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 1070
-        width: 5
-        height: 7
+        x: 312
+        y: 660
+        width: 159
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bacfc5afe12755c46ac4dd889cb1e5fb
+      spriteID: 5a62d7fc418e7b04eaaf78dc2342fda8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_10
+      name: owl_enemy_10
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 1070
-        width: 5
-        height: 8
+        x: 20
+        y: 524
+        width: 195
+        height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b4f6bf491a3e6f42b81f4bbffe6f3a5
+      spriteID: ca61ce91257b8ad49a15ede84a639197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ParticleSpriteSheet_11
+      name: owl_enemy_11
       rect:
         serializedVersion: 2
-        x: 199
-        y: 474
-        width: 223
-        height: 268
+        x: 237
+        y: 524
+        width: 119
+        height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d58e4d02029395c438ab2fc72ec6ecca
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 526
-        y: 241
-        width: 301
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5aefa40a4f8ccb34ea58683e46943b71
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 907
-        y: 44
-        width: 317
-        height: 706
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c39e04a201225f4cad438fb67f527c0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 1314
-        y: 45
-        width: 263
-        height: 468
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdd6f597d006a9a47bc1a672aed938bb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ParticleSpriteSheet_15
-      rect:
-        serializedVersion: 2
-        x: 1741
-        y: 44
-        width: 228
-        height: 233
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2ea6183d35166a4c9733a06d1b1ef9f
+      spriteID: 2178ba614cdf6b34ca2cb3615952efa4
       vertices: []
       indices: 
       edges: []
@@ -475,7 +391,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e2da1d26fe012b44eb92b12e7afc4da9
+    spriteID: f9950996df6540e4ea4cba06fcdf4ef1
     vertices: []
     indices: 
     edges: []

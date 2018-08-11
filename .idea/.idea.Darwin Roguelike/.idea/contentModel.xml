@@ -6,8 +6,11 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="EnemyController.cs" t="Include" />
+          <e p="HealingTrait.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="SpeedTrait.cs" t="Include" />
+          <e p="ThornsTrait.cs" t="Include" />
           <e p="Trait.cs" t="Include" />
           <e p="TraitManager.cs" t="Include" />
         </e>

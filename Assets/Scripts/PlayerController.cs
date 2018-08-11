@@ -26,9 +26,28 @@ public class PlayerController : MonoBehaviour
         playerMovement();
         checkDead();
 
+        TraitManager tm = FindObjectOfType<TraitManager>().Instance;
+        
         if(Input.GetKeyDown("p"))
         {
-            FindObjectOfType<TraitManager>().Instance.ApplyTraits(this);
+            tm.ApplyTraits(this);
+        }
+
+        if (Input.GetKeyDown("1"))
+        {
+            tm.ActivateAbility(this, 1);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            tm.ActivateAbility(this, 2);
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            tm.ActivateAbility(this, 3);
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            tm.ActivateAbility(this, 4);
         }
     }
 

@@ -20,9 +20,20 @@ public class TraitManager : MonoBehaviour {
     public List<Trait> AllTraits = new List<Trait>
     {
         new SpeedTrait(),
-        new HealingTrait()
+        new HealingTrait(),
+	    new ThornsTrait()
 	};
 	public List<Type> UnlockedTraits = new List<Type>();
+	
+	public IActiveTrait[] ActiveTraits = new IActiveTrait[4];
+
+	public void ActivateAbility(PlayerController player, int ability)
+	{
+		if (ActiveTraits[ability - 1] != null)
+		{
+			ActiveTraits[ability - 1].DoActive(player);
+		}
+	}
 	
 	private void Awake()
 	{

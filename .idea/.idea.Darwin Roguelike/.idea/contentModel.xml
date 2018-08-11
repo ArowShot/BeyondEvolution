@@ -7,6 +7,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ClawsScript.cs" t="Include" />
+          <e p="CLickAnywehere.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="HealthAndStaminaUpdater.cs" t="Include" />

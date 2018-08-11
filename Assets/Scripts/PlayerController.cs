@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        Animator = GetComponent<Animator>();
         _gm = FindObjectOfType<GameManager>();
+        Animator = GetComponent<Animator>();
+        InvokeRepeating("RegenStamina", 5.0f, 4.0f);
     }
 
     // Update is called independent of framerate - physics code goes here
@@ -129,5 +130,13 @@ public class PlayerController : MonoBehaviour
     private void PlayerAttack()
     {
         Instantiate(Laser, transform.position, Quaternion.identity);
+    }
+
+    private void RegenStamina()
+    {
+        if (Stamina < MaxStamina)
+        {
+            Stamina++;
+        }
     }
 }

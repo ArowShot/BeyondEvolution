@@ -22,7 +22,7 @@ public class HealthAndStaminaUpdater : MonoBehaviour
 	}
 	
 	private void Update () {
-		HealthText.text = "Health " + Player.Health + "/" + Player.MaxHealth;
+		HealthText.text = "Health " + Player.Health.ToString("F0") + "/" + Player.MaxHealth;
 		HealthBar.sizeDelta = new Vector2(Player.Health / Player.MaxHealth * _healthMax - _healthMax, 0);
 		StaminaText.text = "Stamina " + Player.Stamina + "/" + Player.MaxStamina;
 		StaminaBar.sizeDelta = new Vector2(Player.Stamina / Player.MaxStamina * _staminaMax - _staminaMax, 0);

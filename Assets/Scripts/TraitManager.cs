@@ -23,7 +23,8 @@ public class TraitManager : MonoBehaviour {
         new SpeedTrait(),
         new HealingTrait(),
 	    new ThornsTrait(),
-        new DebugTrait()
+        new DebugTrait(),
+        new LaserAttackTrait()
 	};
 	public List<Type> UnlockedTraits = new List<Type>();
 	

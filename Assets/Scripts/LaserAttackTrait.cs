@@ -21,12 +21,12 @@ public class LaserAttackTrait : Trait, IActiveTrait {
     }
 
     public void DoActive(PlayerController player)
-    {
+    { 
         ShootLasers();
     }
 
     private void ShootLasers()
     {
-
+        Debug.Log("Lasers Work");
     }
 }

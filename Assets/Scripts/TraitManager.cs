@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class TraitManager : MonoBehaviour {
 	public TraitManager Instance { get; private set; }
 
+	public Text EvolutionPointsText;
 	public GameObject CategoryGui;
 	public GameObject TraitsGui;
 	public GameObject CategoryPrefab;
@@ -35,11 +36,14 @@ public class TraitManager : MonoBehaviour {
 
 	private void Start()
 	{
-		CreateGui();
+		CreateTraitSelectionGui();
 	}
 
-	private void CreateGui()
+	private void CreateTraitSelectionGui()
 	{
+		EvolutionPointsText.text = "Evolution Points: " + EvolutionPoints;
+			
+			
 		// Reset Gui
 		foreach (Transform child in CategoryGui.transform) {
 			Destroy(child.gameObject);
@@ -99,7 +103,18 @@ public class TraitManager : MonoBehaviour {
 
 	private void Update()
 	{
-		
+		var player = FindObjectOfType<PlayerController>();
+		foreach(var trait in AllTraits)
+		{
+			if (!UnlockedTraits.Contains(trait.GetType()))
+				return;
+			
+			var passiveTrait = trait as IPassiveTrait;
+			if (passiveTrait != null)
+			{
+				passiveTrait.Update(player);
+			}
+		}
 	}
 
 	private void PurchaseTrait(Trait trait)
@@ -116,7 +131,7 @@ public class TraitManager : MonoBehaviour {
 		EvolutionPoints -= cost;
 		UnlockedTraits.Add(trait.GetType());
 
-		CreateGui();
+		CreateTraitSelectionGui();
 	}
 
 	public void ApplyTraits(PlayerController player)
@@ -137,7 +152,7 @@ public class TraitManager : MonoBehaviour {
 	public void ShowTraitSelection()
 	{
 		TraitsGui.SetActive(true);
-		CreateGui();
+		CreateTraitSelectionGui();
 	}
 	
 	public void HideTraitSelection()

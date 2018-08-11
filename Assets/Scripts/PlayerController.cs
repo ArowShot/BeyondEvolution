@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +17,14 @@ public class PlayerController : MonoBehaviour
     public float YAxis;
     public GameObject Laser;
     private Rigidbody2D _rb;
+    public Animator Animator;
 
     // Use this for initialization
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called independent of framerate - physics code goes here
@@ -37,25 +40,21 @@ public class PlayerController : MonoBehaviour
             tm.ApplyTraits(this);
         }
 
-        if (Input.GetKeyDown("1"))
+        if (Input.GetMouseButtonDown(0))
         {
             tm.ActivateAbility(this, 1);
         }
-        if (Input.GetKeyDown("2"))
+        if (Input.GetMouseButtonDown(1))
         {
             tm.ActivateAbility(this, 2);
         }
-        if (Input.GetKeyDown("3"))
+        if (Input.GetKeyDown("q"))
         {
             tm.ActivateAbility(this, 3);
         }
-        if (Input.GetKeyDown("4"))
+        if (Input.GetKeyDown("e"))
         {
             tm.ActivateAbility(this, 4);
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            PlayerAttack();
         }
     }
 
@@ -76,6 +75,43 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity *= Speed / _rb.velocity.magnitude;
         }
+        
+        
+        if (Animator != null)
+        {
+            if(Animator.runtimeAnimatorController!=null)
+            {
+                Animator.SetFloat("Up", Input.GetAxisRaw("Vertical"));
+                Animator.SetFloat("Right", Input.GetAxisRaw("Horizontal"));
+                /*if (Input.GetAxis("Vertical") > 0)
+                {
+                    Animator.SetFloat("Up", 1);
+                }
+                if (Input.GetAxis("Vertical") < 0)
+                {
+                    Animator.SetFloat("Up", -1);
+                }
+                if (Input.GetAxis("Vertical") == 0)
+                {
+                    Animator.SetFloat("Up", 0);
+                }
+                if (Input.GetAxis("Horizontal") > 0)
+                {
+                    Animator.SetFloat("Right", 1);
+                }
+                if (Input.GetAxis("Horizontal") < 0)
+                {
+                    Animator.SetFloat("Right", -1);
+                }
+                if (Input.GetAxis("Horizontal") == 0)
+                {
+                    Animator.SetFloat("Right", 0);
+                }*/
+                
+                Animator.SetBool("Walking", Math.Abs(velocityX.x) + Math.Abs(velocityY.y) > .2);
+            }
+        }
+
     }
 
     private void CheckDead()
